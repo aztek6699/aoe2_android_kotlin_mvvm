@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/civilizationFragment">
+
+    <fragment
+        android:id="@+id/civilizationFragment"
+        android:name="com.example.kotlin_mvvm_aoe_2.modules.civilizations.CivilizationFragment"
+        android:label="civilization_fragment"
+        tools:layout="@layout/fragment_civilizations">
+        <action
+            android:id="@+id/action_civilizationFragment_to_unitsFragment"
+            app:destination="@id/unitsFragment" />
+        <action
+            android:id="@+id/action_civilizationFragment_to_structuresFragment"
+            app:destination="@id/structuresFragment" />
+        <action
+            android:id="@+id/action_civilizationFragment_to_technologiesFragment"
+            app:destination="@id/technologiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/structuresFragment"
+        android:name="com.example.kotlin_mvvm_aoe_2.modules.structures.StructuresFragment"
+        android:label="structures_fragment"
+        tools:layout="@layout/fragment_structures" />
+    <fragment
+        android:id="@+id/technologiesFragment"
+        android:name="com.example.kotlin_mvvm_aoe_2.modules.technologies.TechnologiesFragment"
+        android:label="technologies_fragment"
+        tools:layout="@layout/fragment_technologies" />
+    <fragment
+        android:id="@+id/unitsFragment"
+        android:name="com.example.kotlin_mvvm_aoe_2.modules.units.UnitsFragment"
+        android:label="units_fragment"
+        tools:layout="@layout/fragment_units" />
+</navigation>
