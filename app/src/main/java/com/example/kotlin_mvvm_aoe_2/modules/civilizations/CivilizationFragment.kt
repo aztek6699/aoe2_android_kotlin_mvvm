@@ -58,7 +58,7 @@ class CivilizationFragment : Fragment() {
     }
 
     private fun initListeners() {
-        mCivilizationAdapter.setOnClickListener { it ->
+        mCivilizationAdapter.setOnClickListener {
             Log.d(TAG, "civilization adapter on click: " + it.name)
         }
     }

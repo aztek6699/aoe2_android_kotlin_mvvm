@@ -57,7 +57,7 @@ class StructuresFragment : Fragment() {
     }
 
     private fun initListeners() {
-        mStructuresAdapter.setOnClickListener { it ->
+        mStructuresAdapter.setOnClickListener {
             Log.d(TAG, "structure adapter on click: " + it.name)
         }
     }

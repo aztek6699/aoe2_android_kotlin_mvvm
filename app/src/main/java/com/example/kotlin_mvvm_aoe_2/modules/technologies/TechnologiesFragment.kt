@@ -58,8 +58,8 @@ class TechnologiesFragment : Fragment() {
     }
 
     private fun initListeners() {
-        mTechnologiesAdapter.setOnClickListener { it ->
-            Log.d(TAG, "structure adapter on click: " + it.name)
+        mTechnologiesAdapter.setOnClickListener {
+            Log.d(TAG, "technology adapter on click: " + it.name)
         }
     }
 

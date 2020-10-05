@@ -58,8 +58,8 @@ class UnitsFragment : Fragment() {
     }
 
     private fun initListeners() {
-        mUnitsAdapter.setOnClickListener { it ->
-            Log.d(TAG, "structure adapter on click: " + it.name)
+        mUnitsAdapter.setOnClickListener {
+            Log.d(TAG, "unit adapter on click: " + it.name)
         }
     }
 

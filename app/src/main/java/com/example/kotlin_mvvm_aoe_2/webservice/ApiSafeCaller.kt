@@ -1,3 +1,0 @@
-package com.example.kotlin_mvvm_aoe_2.webservice
-
-class ApiSafeCaller

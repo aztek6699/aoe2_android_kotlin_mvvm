@@ -12,23 +12,23 @@ data class TechnologyDto(
     @PrimaryKey
     val id: Int,
 
-    val name: String,
-    val description: String,
-    val expansion: String,
-    val age: String,
+    val name: String?,
+    val description: String?,
+    val expansion: String?,
+    val age: String?,
 
     @Embedded
-    val cost: CostDto,
+    val cost: CostDto?,
 
     @ColumnInfo(name = "develops_in")
     @SerializedName("develops_in")
-    val developsIn: String,
+    val developsIn: String?,
 
     @ColumnInfo(name = "build_time")
     @SerializedName("build_time")
-    val buildTime: Int,
+    val buildTime: Int?,
 
     @ColumnInfo(name = "applies_to")
     @SerializedName("applies_to")
-    val appliesTo: List<String>
+    val appliesTo: List<String>?
 )

@@ -12,25 +12,25 @@ data class StructureDto(
     @PrimaryKey
     var id: Int,
 
-    var name: String,
-    var expansion: String,
-    var age: String,
-    var armor: String,
+    var name: String?,
+    var expansion: String?,
+    var age: String?,
+    var armor: String?,
 
     var special: List<String>?,
 
     @Embedded
-    var cost: CostDto,
+    var cost: CostDto?,
 
     @ColumnInfo(name = "build_time")
     @SerializedName("build_time")
-    var build_time: Int,
+    var build_time: Int?,
 
     @ColumnInfo(name = "hit_points")
     @SerializedName("hit_points")
-    var hit_points: Int,
+    var hit_points: Int?,
 
     @ColumnInfo(name = "line_of_sight")
     @SerializedName("line_of_sight")
-    var line_of_sight: Int
+    var line_of_sight: Int?
 )
