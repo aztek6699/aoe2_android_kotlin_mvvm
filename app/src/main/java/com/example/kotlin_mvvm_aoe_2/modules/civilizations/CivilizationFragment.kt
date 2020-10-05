@@ -10,6 +10,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlin_mvvm_aoe_2.R
@@ -21,6 +23,7 @@ class CivilizationFragment : Fragment() {
     private lateinit var binding: FragmentCivilizationsBinding
     private lateinit var viewModel: CivilizationViewModel
     private lateinit var mContext: Context
+    private lateinit var navController: NavController
     private lateinit var mCivilizationAdapter: CivilizationsAdapter
 
     override fun onCreateView(
@@ -36,7 +39,8 @@ class CivilizationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         activity?.let { mContext = it }
-        viewModel = ViewModelProvider(this).get(CivilizationViewModel::class.java)
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+        viewModel = ViewModelProvider(requireActivity()).get(CivilizationViewModel::class.java)
 
         initUi()
         initData()
@@ -60,6 +64,9 @@ class CivilizationFragment : Fragment() {
     private fun initListeners() {
         mCivilizationAdapter.setOnClickListener {
             Log.d(TAG, "civilization adapter on click: " + it.name)
+            viewModel.civilizationDto.value = it
+
+            navController.navigate(R.id.action_civilizationFragment_to_civilizationDetailFragment)
         }
     }
 

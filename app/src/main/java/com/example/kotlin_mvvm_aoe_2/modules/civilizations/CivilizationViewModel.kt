@@ -3,6 +3,7 @@ package com.example.kotlin_mvvm_aoe_2.modules.civilizations
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.kotlin_mvvm_aoe_2.database.AppDatabase
 import com.example.kotlin_mvvm_aoe_2.models.civilizations.CivilizationDto
@@ -13,6 +14,8 @@ class CivilizationViewModel(application: Application) : AndroidViewModel(applica
 
     private var repo: CivilizationsRepo =
         CivilizationsRepo(AppDatabase.getDatabase(application).roomDao())
+
+    var civilizationDto = MutableLiveData<CivilizationDto>()
 
     init {
         viewModelScope.launch(Dispatchers.IO) { repo.getAllCivilizationsApi() }

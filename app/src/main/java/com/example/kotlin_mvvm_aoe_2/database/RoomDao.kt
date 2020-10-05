@@ -36,4 +36,6 @@ interface RoomDao {
 
     @Query("select * from units_table order by id asc")
     fun getUnitsLiveData(): LiveData<List<UnitDto>>
+
+    //@Query("select * from civilizations_table wher")
 }

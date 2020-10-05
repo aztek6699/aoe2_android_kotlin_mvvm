@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_civilizationFragment_to_technologiesFragment"
             app:destination="@id/technologiesFragment" />
+        <action
+            android:id="@+id/action_civilizationFragment_to_civilizationDetailFragment"
+            app:destination="@id/civilizationDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/structuresFragment"
@@ -35,4 +38,8 @@
         android:name="com.example.kotlin_mvvm_aoe_2.modules.units.UnitsFragment"
         android:label="units_fragment"
         tools:layout="@layout/fragment_units" />
+    <fragment
+        android:id="@+id/civilizationDetailFragment"
+        android:name="com.example.kotlin_mvvm_aoe_2.modules.civilizations.CivilizationDetailFragment"
+        android:label="CivilizationDetailFragment" />
 </navigation>
